@@ -1,0 +1,88 @@
+.container {
+  display: flex;
+  justify-content: center;
+  width: 280px;
+  border-radius: 10px;
+  transition: all 2s;
+  background-color: rgba(219, 157, 199, 0.75);
+}
+
+.initial {
+  width: 100px;
+  padding-top: 1.5px;
+  margin: 25px auto;
+  text-align: center;
+  border: 1px solid white;
+  color: white;
+  border-radius: 5px;
+  transition: height 1s;
+  font-weight: bolder;
+}
+
+@keyframes initialHover {
+  from {color: white; border-color: white}
+  to {color: grey; border-color: grey}
+}
+
+.initial:hover {
+  animation: initialHover .5s forwards;
+}
+
+.initial1 {
+  transition: font-size 1s;
+  margin-top: -3px;
+  margin-right: 40px;
+}
+.initial2 {
+  transition: font-size 1s;
+  margin-top: -20px;
+  margin-left: 40px;
+}
+
+.name {
+  margin: auto auto;
+  font-size: calc(18px + 2vmin);
+}
+
+.title {
+  margin: 10px auto;
+  font-size: calc(6px + 2vmin);
+  transition: all 2s;
+}
+
+
+
+.links {
+  margin-top: 15px;
+  transition: all 2s;
+
+}
+
+.link {
+  font-size: 10px;
+  width: 100%;
+  text-align: center;
+  padding: 0px 0px;
+  background-color: rgba(29, 81, 139, 0.0);
+  transition: all 3s;
+  border-color: black;
+}
+
+.link:hover {
+  background-color: rgba(4, 72, 129, 0.51);
+  font-weight: bold;
+}
+
+.link:focus {
+  background-color: rgba(164, 175, 201, .4);
+  font-weight: bold;
+}
+
+.buttons {
+  margin-top: 40px;
+  transition: all 3s;
+}
+
+.hide1 {
+  color: rgba(0, 0, 0, 0);
+}

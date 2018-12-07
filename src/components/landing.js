@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
-import { Row, Col, Button} from 'react-materialize';
+import { Row, Col, Button, Modal} from 'react-materialize';
 import '../css/landing.css'
+import { connect } from 'react-redux'
+// import { bindActionCreators } from 'redux'
+// import { landingAnimations } from '../actions'
 
 class Landing extends Component {
 
@@ -9,7 +12,7 @@ class Landing extends Component {
 
     this.state = {
       animate: false,
-      list: ['Web Developer', 'Carpenter', 'Snow-Boarder', 'Musician', 'Golfer', 'Dog Parent'],
+      list: ['Web Developer', 'Carpenter', 'Snow Boarder', 'Musician', 'Golfer', 'Dog Parent'],
       listNum: 0,
       listChar: 0,
       name: 'Jeffry Slater',
@@ -50,29 +53,24 @@ class Landing extends Component {
     })
   }
 
-
   componentDidMount() {
     setTimeout(() => {
-      let revealChar = setInterval(() => this.revealNameChar(), 100)
-      setTimeout(() => clearInterval(revealChar), 1500)
+      this.setState({ animate: true })
+      setTimeout(() => {
+        let revealChar = setInterval(() => this.revealNameChar(), 100)
+        setTimeout(() => clearInterval(revealChar), 1500)
+      }, 100)
+      setTimeout(() => { setInterval(() => this.revealListChar(), 150) }, 1500)
+      setTimeout(() => this.setState({linkShow: true}), 3000)
+      setTimeout(() => this.setState({buttonShow: true}), 4000)
     }, 100)
-    setTimeout(() => {
-      setInterval(() => this.revealListChar(), 150)
-    }, 1500)
-    setTimeout(() => this.setState({linkShow: true}), 3000)
-    setTimeout(() => this.setState({buttonShow: true}), 4000)
-    requestAnimationFrame(() => {
-      this.setState({ animate: true });
-    });
   }
 
   render() {
 
-    console.log(this.state.list[0]);
-
     return (
       <Row>
-          <Col s={12} m={12} l={12}>
+          <Col s={6} m={6} l={6}>
             <div
               className="container"
               style={ {
@@ -122,7 +120,13 @@ class Landing extends Component {
                      } }
                   >
                     <Col l={4} m={4} s={4} className="center-align">
-                      <Button className="link" href="#">About</Button>
+                    <Modal
+                    header='Modal Header'
+                    trigger={<Button className="link" href="#">About</Button>}>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                    incididunt ut labore et dolore magna aliqua.</p>
+                    </Modal>
+
                     </Col>
 
                     <Col l={4} m={4} s={4} className="center-align">
@@ -143,15 +147,21 @@ class Landing extends Component {
                      } }
                   >
                     <Col l={4} m={4} s={4} className="center-align insta">
-                      <img src="https://www.freeiconspng.com/uploads/black-instagram-icon-vector-22.png" width="44.75" alt="Black Instagram Icon Vector" />
+                      <a rel="noopener noreferrer" target="_blank" href="https://www.instagram.com/jeffrysdayoff/">
+                        <img src="https://www.freeiconspng.com/uploads/black-instagram-icon-vector-22.png" width="44.75" alt="Black Instagram Icon Vector" />
+                      </a>
                     </Col>
 
                     <Col l={4} m={4} s={4} className="center-align">
-                      <img src={require("../01img/GitHub-Mark-32px.png")} alt="GitHub"/>
+                      <a rel="noopener noreferrer" target="_blank" href="https://github.com/SlaterJ21">
+                        <img src={require("../01img/GitHub-Mark-32px.png")} alt="GitHub"/>
+                      </a>
                     </Col>
 
                     <Col l={4} m={4} s={4} className="center-align">
-                      <img src={require("../01img/linkedin.png")} alt="linkedin" width="35" opacity={0.1}/>
+                      <a rel="noopener noreferrer" target="_blank" href="https://www.linkedin.com/in/jeffry-slater-a5196015b/">
+                        <img src={require("../01img/linkedin.png")} alt="linkedin" width="35" opacity={0.1}/>
+                      </a>
                     </Col>
                   </div>
                 </Col>
@@ -164,4 +174,15 @@ class Landing extends Component {
   }
 }
 
-export default Landing;
+// const mapDispatchToProps = dispatch => bindActionCreators({
+// }, dispatch)
+
+// const mapStateToProps = state => {
+//   return {
+//   }
+// }
+
+export default connect(
+  null,
+  null
+)(Landing);

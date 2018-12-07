@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import { Row, Col, Button, Modal} from 'react-materialize';
 import '../css/landing.css'
 import { connect } from 'react-redux'
-// import { bindActionCreators } from 'redux'
-// import { landingAnimations } from '../actions'
+import { bindActionCreators } from 'redux'
+import { changeView } from '../actions'
 
 class Landing extends Component {
 
@@ -12,24 +12,26 @@ class Landing extends Component {
 
     this.state = {
       animate: false,
+      initialAni: false,
       list: ['Web Developer', 'Carpenter', 'Snow Boarder', 'Musician', 'Golfer', 'Dog Parent'],
       listNum: 0,
       listChar: 0,
       name: 'Jeffry Slater',
       nameChar: 0,
       linkShow: false,
-      buttonShow: false
+      buttonShow: false,
+      fadeOut: false
     }
   }
 
   revealListChar(){
 
-    if (this.state.listNum === this.state.list.length - 1 && this.state.listChar === this.state.list[this.state.listNum].length + 20) {
+    if (this.state.listNum === this.state.list.length - 1 && this.state.listChar === this.state.list[this.state.listNum].length + 40) {
       this.setState({
         listChar: 0,
         listNum: 0
       })
-    } else if (this.state.listChar === this.state.list[this.state.listNum].length + 20) {
+    } else if (this.state.listChar === this.state.list[this.state.listNum].length + 40) {
       this.setState({
         listChar: 0,
         listNum: this.state.listNum + 1
@@ -53,29 +55,37 @@ class Landing extends Component {
     })
   }
 
+  fadeOut(view) {
+    console.log(view);
+    this.setState({fadeOut: true})
+    setTimeout(() => this.props.changeView(view), 2000)
+  }
+
   componentDidMount() {
     setTimeout(() => {
       this.setState({ animate: true })
+      setTimeout(() => this.setState({initialAni: true}), 300)
       setTimeout(() => {
-        let revealChar = setInterval(() => this.revealNameChar(), 100)
+        let revealChar = setInterval(() => this.revealNameChar(), 75)
         setTimeout(() => clearInterval(revealChar), 1500)
-      }, 100)
-      setTimeout(() => { setInterval(() => this.revealListChar(), 150) }, 1500)
-      setTimeout(() => this.setState({linkShow: true}), 3000)
-      setTimeout(() => this.setState({buttonShow: true}), 4000)
+      }, 500)
+      setTimeout(() => { setInterval(() => this.revealListChar(), 60) }, 1500)
+      setTimeout(() => this.setState({linkShow: true}), 2250)
+      setTimeout(() => this.setState({buttonShow: true}), 2750)
     }, 100)
   }
 
   render() {
-
+    const { changeView } = this.props
     return (
       <Row>
           <Col s={6} m={6} l={6}>
             <div
               className="container"
               style={ {
-                 height: this.state.animate ? 400 : 300,
-                 borderColor: this.state.animate ? "white" : "grey"
+                 height: this.state.animate ? 400 : 0,
+                 borderColor: this.state.animate ? "white" : "grey",
+                 opacity: this.state.fadeOut ? 0 : 1
                } }
             >
 
@@ -84,17 +94,20 @@ class Landing extends Component {
                 <Col l={12} m={12} s={12}>
                   <div className="initial"
                     style={ {
-                       height: this.state.animate ? 100 : 80
+                       height: this.state.initialAni ? 100 : 0,
+                       opacity: this.state.initialAni ? 1 : 0
                      } }
                   >
                     <div className="initial1"
                       style={ {
-                         fontSize: this.state.animate ? "40px" : "30px"
+                         fontSize: this.state.initialAni ? "40px" : "0px",
+                         opacity: this.state.initialAni ? 1 : 0
                        } }
                     >J</div>
                     <div className="initial2"
                       style={ {
-                         fontSize: this.state.animate ? "40px" : "30px"
+                         fontSize: this.state.initialAni ? "40px" : "0px",
+                         opacity: this.state.initialAni ? 1 : 0
                        } }
                     >S</div>
                   </div>
@@ -120,21 +133,15 @@ class Landing extends Component {
                      } }
                   >
                     <Col l={4} m={4} s={4} className="center-align">
-                    <Modal
-                    header='Modal Header'
-                    trigger={<Button className="link" href="#">About</Button>}>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                    incididunt ut labore et dolore magna aliqua.</p>
-                    </Modal>
-
+                      <Button className="link" href="#" onClick={() => changeView('about')}>About</Button>
                     </Col>
 
                     <Col l={4} m={4} s={4} className="center-align">
-                      <Button className="link" href="#">Projects</Button>
+                      <Button className="link" href="#" onClick={() => changeView('projects')}>Projects</Button>
                     </Col>
 
                     <Col l={4} m={4} s={4} className="center-align">
-                      <Button className="link" href="#">Resume</Button>
+                      <Button className="link" href="#" onClick={() => this.fadeOut('resume')}>Resume</Button>
                     </Col>
                   </div>
                 </Col>
@@ -154,7 +161,7 @@ class Landing extends Component {
 
                     <Col l={4} m={4} s={4} className="center-align">
                       <a rel="noopener noreferrer" target="_blank" href="https://github.com/SlaterJ21">
-                        <img src={require("../01img/GitHub-Mark-32px.png")} alt="GitHub"/>
+                        <img src={require("../01img/GitHub-Mark-32px.png")} alt="GitHub" className="darker"/>
                       </a>
                     </Col>
 
@@ -174,15 +181,17 @@ class Landing extends Component {
   }
 }
 
-// const mapDispatchToProps = dispatch => bindActionCreators({
-// }, dispatch)
+const mapDispatchToProps = dispatch => bindActionCreators({
+  changeView
+}, dispatch)
 
-// const mapStateToProps = state => {
-//   return {
-//   }
-// }
+const mapStateToProps = state => {
+  return {
+    view: state.mainReducer.view,
+  }
+}
 
 export default connect(
-  null,
-  null
+  mapStateToProps,
+  mapDispatchToProps
 )(Landing);

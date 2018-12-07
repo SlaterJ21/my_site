@@ -1,16 +1,10 @@
 import {
-  LOADED
+  LOADED,
+  VIEW
 } from '../actions'
 
 const initialState = {
-  animate: false,
-  list: ['Web Developer', 'Carpenter', 'Snow-Boarder', 'Musician', 'Golfer', 'Dog Parent'],
-  listNum: 0,
-  listChar: 0,
-  name: 'Jeffry Slater',
-  nameChar: 0,
-  linkShow: false,
-  buttonShow: false
+  view: 'landing',
 }
 
 export default (state = initialState, action) => {
@@ -20,6 +14,11 @@ export default (state = initialState, action) => {
     case LOADED:
       return {
         loaded: !state.loaded,
+      }
+
+    case VIEW:
+      return {
+        view: action.payload,
       }
 
   default: return state

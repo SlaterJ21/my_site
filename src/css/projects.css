@@ -1,0 +1,56 @@
+.card-image {
+  opacity: 0.95;
+  border-radius: 10px 10px 0px 0px;
+}
+
+.card-footer {
+  width: 100%;
+  height: 220px;
+  margin-top: -15px;
+  padding: 15px;
+  background-color: rgba(248, 248, 248, .8);
+  color: black;
+  border-radius: 0px 0px 10px 10px;
+}
+
+.text-container {
+  width: 100%;
+  height: 140px;
+  margin-top: 10px;
+  padding: 15px;
+  background-color: rgba(248, 248, 248, .8);
+  color: black;
+  overflow: scroll;
+  border-radius: 5px;
+}
+
+.button-right {
+  /* margin-right: -1px; */
+  float: right;
+}
+
+.button-left {
+  margin-right: 0px;
+}
+
+.nextProj {
+  margin-top: 30vh;
+}
+
+p {
+  font-size: calc(7px + .5vw);
+}
+
+.data {
+  font-size: 10px;
+  width: 100%;
+  text-align: center;
+  padding: 0px 0px;
+  background-color: rgba(4, 72, 129, 0.51);
+  transition: all 3s;
+  border-color: black;
+}
+
+.data:focus {
+  background-color: black;
+}

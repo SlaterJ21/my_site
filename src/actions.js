@@ -9,6 +9,7 @@ export const load = () => {
 }
 
 export const changeView = view => {
+  console.log(view);
   return {
     type: VIEW,
     payload: view

@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 
 import Landing from './components/landing.js';
 import Resume from './components/resume.js'
+import Projects from './components/projects.js'
 
 import './App.css';
 
@@ -15,7 +16,10 @@ class App extends Component {
       case 'resume':
         return <Resume/>
 
-      default: return <Landing/>
+      case 'projects':
+        return <Projects/>
+
+      default: return <Projects/>
     }
   }
   render() {

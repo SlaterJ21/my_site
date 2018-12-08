@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { Row, Col, Button, Icon } from 'react-materialize';
+import Youtube from './youtube'
+
 import '../css/about.css'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
@@ -34,7 +36,8 @@ class AboutMe extends Component {
         ['https://www.youtube.com/embed/L9RyiFRe1oI', 'Climbing'],
         ['https://www.youtube.com/embed/jD-8LKESaFQ?start=7', 'Climbing 2']
       ],
-      youtubeIndex: 0
+      youtubeIndex: 0,
+      data: ''
     }
 
   }
@@ -47,6 +50,51 @@ randomYoutube() {
   this.setState({youtubeIndex: Math.floor(Math.random() * this.state.youtube.length)})
 }
 
+changeData(type) {
+  this.setState({data: type})
+}
+
+content() {
+  switch(this.state.data) {
+
+    case 'spotify':
+      return (
+        <Row className="aboutContainer">
+          <Col l={12}>
+            <div className="spotify">
+              <iframe title="rks" src={this.state.spotify[this.state.spotifyIndex][0]} width="250" height="350" frameBorder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+              <div onClick={() => this.randomSpotify()}> next album </div>
+            </div>
+          </Col>
+        </Row>
+      )
+
+    case 'youtube':
+      return (
+        <Row className="aboutContainer">
+          <Youtube/>
+          <Youtube/>
+          <Youtube/>
+        </Row>
+      )
+
+    case 'about':
+      return (
+        <Row className="aboutContainer">
+          This is what im about
+        </Row>
+      )
+
+    default:
+      return (
+        <Row className="aboutContainer">
+          hello
+        </Row>
+      )
+  }
+
+}
+
 
 componentDidMount() {
   this.randomSpotify()
@@ -57,25 +105,40 @@ componentDidMount() {
     const { changeView } = this.props
     return (
       <Row>
-        <Row>
-          <Button> hello </Button>
-          <Button> goodbye </Button>
-        </Row>
         <Col l={12}>
-          <div className="spotify">
-            <iframe title="rks" src={this.state.spotify[this.state.spotifyIndex][0]} width="250" height="350" frameBorder="0" allowtransparency="true" allow="encrypted-media"></iframe>
-            <div onClick={() => this.randomSpotify()}> next album </div>
+        <Col l={3}></Col>
+        <Col l={12} m={12} s={12}>
+          <div className="initial-small"
+            onClick={() => changeView('home')}
+            style={ {
+               height: 80
+             } }
+          >
+            <div className="initial1small">JS</div>
           </div>
         </Col>
-        <Col l={4}></Col>
-        <Col l={12}>
-          <div className="youtube">
-            <iframe title="slowmotion" width="560" height="315" src={this.state.youtube[this.state.youtubeIndex][0]} frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
-            <div onClick={() => this.randomYoutube()}> next video </div>
-          </div>
-        </Col>
+          <Row>
+            <div
+              className="buttons"
+              style={ {
+               } }
+            >
+              <Col l={4} m={4} s={4} className="center-align">
+                <img src={require("../01img/user-account-box.svg")} onClick={() => this.changeData('about')} alt="user" width="35" opacity={0.1}/>
+              </Col>
 
-        <div onClick={() => changeView('home')}>hello</div>
+              <Col l={4} m={4} s={4} className="center-align insta">
+                  <img src={require("../01img/spotify-logo-button.svg")} onClick={() => this.changeData('spotify')} width="44.75" alt="Youtube" />
+              </Col>
+
+              <Col l={4} m={4} s={4} className="center-align">
+                  <img src={require("../01img/youtube.svg")} onClick={() => this.changeData('youtube')} width="56" alt="GitHub" className="darker"/>
+              </Col>
+
+            </div>
+          </Row>
+            {this.content()}
+        </Col>
       </Row>
     );
   }

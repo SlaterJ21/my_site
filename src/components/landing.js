@@ -13,7 +13,7 @@ class Landing extends Component {
     this.state = {
       animate: false,
       initialAni: false,
-      list: ['Web Developer', 'Carpenter', 'Snowboarder', 'Musician', 'Golfer', 'Dog Parent'],
+      list: ['Web Developer', 'Climber', 'Snowboarder', 'Carpenter', 'Musician', 'Golfer', 'Dog Parent'],
       listNum: 0,
       listChar: 0,
       name: 'Jeff Slater',
@@ -125,7 +125,7 @@ class Landing extends Component {
                      } }
                   >
                     <Col l={4} m={4} s={4} className="center-align">
-                      <Button className="link" href="#" onClick={() => changeView('about')}>About</Button>
+                      <Button className="link" href="#" onClick={() => alert('Under Development')}>About</Button>
                     </Col>
 
                     <Col l={4} m={4} s={4} className="center-align">

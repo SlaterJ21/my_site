@@ -3,13 +3,15 @@
   justify-content: center;
   width: 280px;
   border-radius: 10px;
-  transition: all 2s;
+  transition: all 1s;
   background-color: rgba(219, 157, 199, 0.65);
+  animation: backgroundColorChange 60s alternate infinite;
+  box-shadow: 1px 3px rgba(255, 255, 255, 0.4)
 }
 
 .initial {
-  width: 100px;
-  padding-top: 1.5px;
+  width: 80px;
+  padding-top: auto;
   margin: 25px auto;
   text-align: center;
   border: 1px solid white;
@@ -19,6 +21,14 @@
   font-weight: bolder;
 }
 
+@keyframes backgroundColorChange {
+  0% {background-color: rgba(219, 193, 208, 0.65);}
+  25% {background-color: rgba(219, 157, 199, 0.65)}
+  50% {background-color: rgba(150, 117, 169, 0.65);}
+  75% {background-color: rgba(26, 66, 115, 0.65);}
+  100% {background-color: rgba(12, 29, 62, 0.65);}
+}
+
 @keyframes initialHover {
   from {color: white; border-color: white}
   to {color: grey; border-color: grey}
@@ -26,22 +36,13 @@
 
 .initial:hover {
   animation: initialHover .5s forwards;
-}
-
-.initial1 {
   transition: font-size 1s, opacity 1s;
-  margin-top: -3px;
-  margin-right: 40px;
-}
-.initial2 {
-  transition: font-size 1s, opacity 1s;
-  margin-top: -20px;
-  margin-left: 40px;
 }
 
 .name {
   margin: auto auto;
   font-size: calc(18px + 2vmin);
+  font-weight: bold;
 }
 
 .title {
@@ -53,7 +54,6 @@
 .links {
   margin-top: 15px;
   transition: all 2s;
-
 }
 
 .link {

@@ -13,10 +13,10 @@ class Landing extends Component {
     this.state = {
       animate: false,
       initialAni: false,
-      list: ['Web Developer', 'Carpenter', 'Snow Boarder', 'Musician', 'Golfer', 'Dog Parent'],
+      list: ['Web Developer', 'Carpenter', 'Snowboarder', 'Musician', 'Golfer', 'Dog Parent'],
       listNum: 0,
       listChar: 0,
-      name: 'Jeffry Slater',
+      name: 'Jeff Slater',
       nameChar: 0,
       linkShow: false,
       buttonShow: false,
@@ -56,9 +56,8 @@ class Landing extends Component {
   }
 
   fadeOut(view) {
-    console.log(view);
     this.setState({fadeOut: true})
-    setTimeout(() => this.props.changeView(view), 2000)
+    setTimeout(() => this.props.changeView(view), 500)
   }
 
   componentDidMount() {
@@ -70,8 +69,8 @@ class Landing extends Component {
         setTimeout(() => clearInterval(revealChar), 1500)
       }, 500)
       setTimeout(() => { setInterval(() => this.revealListChar(), 60) }, 1500)
-      setTimeout(() => this.setState({linkShow: true}), 2250)
-      setTimeout(() => this.setState({buttonShow: true}), 2750)
+      setTimeout(() => this.setState({linkShow: true}), 2000)
+      setTimeout(() => this.setState({buttonShow: true}), 2250)
     }, 100)
   }
 
@@ -83,8 +82,7 @@ class Landing extends Component {
             <div
               className="container"
               style={ {
-                 height: this.state.animate ? 400 : 0,
-                 borderColor: this.state.animate ? "white" : "grey",
+                 height: this.state.animate ? 400 : 300,
                  opacity: this.state.fadeOut ? 0 : 1
                } }
             >
@@ -94,7 +92,7 @@ class Landing extends Component {
                 <Col l={12} m={12} s={12}>
                   <div className="initial"
                     style={ {
-                       height: this.state.initialAni ? 100 : 0,
+                       height: this.state.initialAni ? 80 : 0,
                        opacity: this.state.initialAni ? 1 : 0
                      } }
                   >
@@ -103,13 +101,7 @@ class Landing extends Component {
                          fontSize: this.state.initialAni ? "40px" : "0px",
                          opacity: this.state.initialAni ? 1 : 0
                        } }
-                    >J</div>
-                    <div className="initial2"
-                      style={ {
-                         fontSize: this.state.initialAni ? "40px" : "0px",
-                         opacity: this.state.initialAni ? 1 : 0
-                       } }
-                    >S</div>
+                    >JS</div>
                   </div>
                 </Col>
 

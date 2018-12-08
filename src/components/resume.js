@@ -12,24 +12,33 @@ class Resume extends Component {
     super(props);
 
     this.state = {
-
+      fadeIn: false
     }
   }
 
-  componentDidMount() {
+  fadeOut(view) {
+    this.setState({fadeIn: false})
+    setTimeout(() => this.props.changeView(view), 800)
+  }
 
+  componentDidMount() {
+    setTimeout(() => this.setState({fadeIn: true}), 100)
   }
 
   render() {
     const { changeView } = this.props
     return (
-      <Row className="resume">
+      <Row className="resume"
+        style={{
+          opacity: this.state.fadeIn ? 1 : 0
+        }}
+      >
 
         <Row>
           <Col l={2} m={1} s={1}></Col>
           <Col l={8} m={10} s={10} className="nav-bar">
             <Col l={2} className="initials">
-              <b onClick={() => changeView('home')}>JS</b>
+              <b onClick={() => {this.fadeOut('home')}}>JS</b>
             </Col>
           </Col>
           <Col l={2} m={1} s={1}></Col>

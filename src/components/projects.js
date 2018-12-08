@@ -10,22 +10,19 @@ const cardData = [
     href: "https://niwot-barber.herokuapp.com",
     imgSrc: require("../01img/app_shots/barber.png"),
     about: "After speaking with Alivia Bell, Owner/Operator of The Niwot Barbershop, I found that she could benefit from an up-to-date website for her shop. I knew that the expense of a website wasn't viable for the business. With a little free time and the desire to find a project I decided to build the website for Aliva as a gift.",
-    features: 'niwot features',
-    code: 'niwot code snippets bit'
+    features: 'Responsive Design, Floating Navigation Button, Moving Barbershop Pole, Day of the Week Tracker, Embedded Map'
   },
   {
     href: "https://cleverent.herokuapp.com",
     imgSrc: require("../01img/app_shots/cleverent.png"),
-    about: 'cleverent about',
-    features: 'cleverent features',
-    code: 'cleverent code snippets'
+    about: 'The idea behind CleveRent was to facilitate Tenant to Property management communications.',
+    features: 'Auth0, bcrypt, JWT, Programmatically popullated cards with images based on user input'
   },
   {
-    href: "https://cleverent.herokuapp.com",
-    imgSrc: require("../01img/app_shots/cleverent.png"),
-    about: 'vdfavsdasdf',
-    features: 'cvasdvasdv',
-    code: 'werefsdfsdf'
+    href: "#",
+    imgSrc: require("../01img/app_shots/mff2.png"),
+    about: 'Transactional tool to keep track of orders. Owners can create new trucks, menu items and toggle status. Eaters can browse online trucks and place orders.',
+    features: 'Auth0, bcrypt, JWT, Programmatically popullated cards with images based on user input'
   }
 ]
 
@@ -37,7 +34,8 @@ class Projects extends Component {
     this.state = {
       currentData: 0,
       cardData: cardData,
-      dataType: 'about'
+      dataType: 'about',
+      timer: 8
     }
   }
 
@@ -49,15 +47,18 @@ class Projects extends Component {
     return Math.floor(Math.random() * cardData.length)
   }
 
-  // changeDataSet() {
-  //   let random = this.randomNum()
-  //   while (random === this.state.currentData){
-  //     random = this.randomNum()
-  //   }
-  //   this.setState({
-  //     currentData: random,
-  //   })
-  // }
+  decrementTimer() {
+    if( this.state.timer === 0 ){
+      this.nextDataSet()
+      this.setState({timer: 8})
+    } else {
+      this.setState({timer: this.state.timer - 1})
+    }
+  }
+
+  resetTimer(){
+    this.setState({timer: 8})
+  }
 
   nextDataSet() {
     if (this.state.currentData === this.state.cardData.length - 1) {
@@ -84,13 +85,27 @@ class Projects extends Component {
   }
 
   componentDidMount() {
-
+    // setInterval(() => this.decrementTimer(), 1000)
+    this.setState({currentData: this.randomNum()})
   }
 
   render() {
     const { changeView } = this.props
     return (
-      <Row>
+      <Row onClick={() => this.resetTimer()}>
+        <Row>
+        <Col l={3}></Col>
+        <Col l={12} m={12} s={12}>
+          <div className="initial-small"
+            onClick={() => changeView('home')}
+            style={ {
+               height: 80
+             } }
+          >
+            <div className="initial1small">JS</div>
+          </div>
+        </Col>
+        </Row>
         <Col l={3} m={2} s={1}></Col>
         <Col l={1} m={1} s={1}>
           <div className="nextProj button-right" onClick={() => this.prevDataSet()}><Icon small>chevron_left</Icon></div>
@@ -102,16 +117,12 @@ class Projects extends Component {
           <div className="card-footer">
             <Row>
               <div className="fixed-buttons">
-                <Col l={4} m={4} s={4} className="center-align">
+                <Col l={6} m={6} s={6} className="center-align">
                   <Button className="data" href="#" onClick={() => this.changeDataType('about')}>About</Button>
                 </Col>
 
-                <Col l={4} m={4} s={4} className="center-align">
+                <Col l={6} m={6} s={6} className="center-align">
                   <Button className="data" href="#" onClick={() => this.changeDataType('features')}>Features</Button>
-                </Col>
-
-                <Col l={4} m={4} s={4} className="center-align">
-                  <Button className="data" href="#" onClick={() => this.changeDataType('code')}>Code Snippet</Button>
                 </Col>
               </div>
             </Row>

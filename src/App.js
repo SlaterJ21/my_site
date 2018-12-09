@@ -12,6 +12,7 @@ import './App.css';
 class App extends Component {
   currentView() {
     switch(this.props.view) {
+      
       case 'home':
         return <Landing/>
 

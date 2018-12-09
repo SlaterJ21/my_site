@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import { Row, Col, Button, Modal, Navbar, NavItem} from 'react-materialize';
-import Logo from './logo'
+import { Row, Col} from 'react-materialize';
 import '../css/resume.css'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
@@ -34,7 +33,6 @@ class Resume extends Component {
   }
 
   render() {
-    const { changeView } = this.props
     return (
       <Row className="resume"
         style={{
@@ -45,9 +43,15 @@ class Resume extends Component {
         <Row>
           <Col l={2} m={1} s={1}></Col>
           <Col l={8} m={10} s={10} className="nav-bar">
-            <Col l={2} className="initials">
-              <b onClick={() => {this.fadeOut('home')}}>JS</b>
-            </Col>
+          <Col l={12} m={12} s={12} height="80px">
+            <div className="initial-resume"
+              onClick={() => this.fadeOut('home')}
+              style={ { height: 80 } }
+            >
+              <div className="initial1resume">JS</div>
+            </div>
+          </Col>
+
           </Col>
           <Col l={2} m={1} s={1}></Col>
         </Row>

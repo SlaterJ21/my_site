@@ -99,13 +99,13 @@ class Projects extends Component {
         <Row>
         <Col l={3}></Col>
         <Col l={12} m={12} s={12}>
-          <div className="initial-small"
+          <div className="initial-project"
             onClick={() => changeView('home')}
             style={ {
                height: 80
              } }
           >
-            <div className="initial1small">JS</div>
+            <div className="initial1project">JS</div>
           </div>
         </Col>
         </Row>

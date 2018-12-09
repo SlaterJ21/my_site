@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Row, Col, Button, Modal} from 'react-materialize';
+import { Row, Col, Button } from 'react-materialize';
 import '../css/landing.css'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
@@ -125,7 +125,7 @@ class Landing extends Component {
                      } }
                   >
                     <Col l={4} m={4} s={4} className="center-align">
-                      <Button className="link" href="#" onClick={() => alert('Under Development')}>About</Button>
+                      <Button className="link" href="#" onClick={() => changeView('about')}>About</Button>
                     </Col>
 
                     <Col l={4} m={4} s={4} className="center-align">

@@ -1,0 +1,48 @@
+@keyframes buttonColor {
+  0% {background-color: rgba(148, 0, 211, .6)}
+  18% {background-color: rgba(75, 0, 130, .6)}
+  36% {background-color: rgba(	0, 0, 255, .6)}
+  52% {background-color: rgba(0, 255, 0, .6)}
+  70% {background-color: rgba(255, 255, 0, .6)}
+  88% {background-color: rgba(255, 127, 0, .6)}
+  100% {background-color: rgba(255, 0 , 0, .6)}
+}
+
+
+.aboutButtons {
+  border-radius: 5px;
+  height: 60px;
+  width: 350px;
+  margin-top: 20px;
+  margin-bottom: 30px;
+  animation: buttonColor 100s linear alternate infinite;
+}
+
+.aboutButton {
+  width: 100px;
+  height: 60px;
+  padding-top: 12px;
+  transition: all 2s;
+}
+
+.youtubeButton {
+  width: 100px;
+  margin-top: 0px;
+  padding-top: 3px;
+  opacity: .9;
+  border-radius: 2px;
+  height: 60px;
+  margin-top:0px;
+  transition: all 1s;
+}
+
+.youtubeButton:hover, .aboutButton:hover, .spotifyButton:hover {
+  background-color: rgba(255,255,255, 0.2);
+}
+
+.spotifyButton {
+  width: 100px;
+  height: 60px;
+  padding-top: 12px;
+  transition: all 2s;
+}

@@ -1,16 +1,18 @@
 import {
   LOADED,
-  VIEW
+  VIEW,
+  CHANGE_ABOUT_DATA
 } from '../actions'
 
 const initialState = {
   view: 'landing',
+  aboutData: 'about'
 }
 
 export default (state = initialState, action) => {
 
   switch (action.type) {
-
+    
     case LOADED:
       return {
         loaded: !state.loaded,
@@ -19,6 +21,12 @@ export default (state = initialState, action) => {
     case VIEW:
       return {
         view: action.payload,
+      }
+
+    case CHANGE_ABOUT_DATA:
+      return {
+        aboutData: action.payload,
+        view: state.view
       }
 
   default: return state

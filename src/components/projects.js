@@ -12,15 +12,15 @@ const cardData = [
     imgSrc: require("../01img/app_shots/barber.png"),
     about: "After speaking with Alivia Bell, Owner/Operator of The Niwot Barbershop, I found that she could benefit from an up-to-date website for her shop. I knew that the expense of a website wasn't viable for the business. With a little free time and the desire to find a project I decided to build the website for Aliva as a gift.",
     duties: ['Express Sever Dev', 'PostgreSQL DB dev', 'UI/UX QA'],
-    features: 'Responsive Design, Floating Navigation Button, Moving Barbershop Pole, Day of the Week Tracker, Embedded Map'
+    techs: ['React', 'React-materialize', 'PostgreSQL', 'Express.js', 'Node.js', 'HTML/CSS']
   },
   {
     title: "CleveRent",
     href: "#",
     imgSrc: require("../01img/app_shots/cleverent.png"),
-    about: 'The idea behind CleveRent was to facilitate Tenant to Property management communications.',
-    duties: ['Express Sever Dev', 'PostgreSQL DB dev', 'UI/UX QA'],
-    features: 'Auth0, bcrypt, JWT, Programmatically popullated cards with images based on user input'
+    about: 'CleveRent was developed as a tool to expedite communication between Tenants and Property managers. The app was designed to support users ranging from homeowners renting single rooms to the managers of multi-unit properties. One of the highlighted features of the app are the live updates based on user input. I worked on this project with two partners Johnny Castillo and John Stephens-Webb. The three of us were a balanced team that took pride in planning and adapted well to      challenges. At the time we were all novice developers, but our teamwork and cohesion as a unit allowed us to deliver the mvp before the deadline.',
+    duties: ['Express Sever Development', 'PostgreSQL DB Development', 'UI/UX Quality Assurance'],
+    techs: ['Auth0', 'bcrypt', 'JWT', 'React', 'React-materialize', 'PostgreSQL', 'Express.js', 'Node.js', 'HTML/CSS']
   },
   {
     title: "Mobile Food Finder",
@@ -28,7 +28,7 @@ const cardData = [
     imgSrc: require("../01img/app_shots/mff2.png"),
     about: 'Transactional tool to keep track of orders. Owners can create new trucks, menu items and toggle status. Eaters can browse online trucks and place orders.',
     duties: ['Express Sever Dev', 'PostgreSQL DB dev', 'UI/UX QA'],
-    features: 'Auth0, bcrypt, JWT, Programmatically popullated cards with images based on user input'
+    techs: ['React-Native', 'Redux', 'Heroku', 'Auth0', 'bcrypt', 'React-materialize', 'PostgreSQL', 'Express.js', 'Node.js', 'HTML/CSS']
   }
 ]
 
@@ -48,7 +48,7 @@ class Projects extends Component {
   formattedDuties() {
     return (
       <ul>
-        {this.state.cardData ? this.state.cardData[this.state.currentData].duties.map(duty => <li>{duty}</li>) : null}
+        {this.state.cardData ? this.state.cardData[this.state.currentData][this.state.dataType].map(duty => <li>{duty}</li>) : null}
       </ul>
     )
   }
@@ -154,13 +154,13 @@ class Projects extends Component {
                 </Col>
 
                 <Col l={4} m={4} s={4} className="center-align">
-                  <Button className="data" href="#" onClick={() => this.changeDataType('features')}>Features</Button>
+                  <Button className="data" href="#" onClick={() => this.changeDataType('techs')}>Techs</Button>
                 </Col>
 
               </div>
             </Row>
             <Col l={12} className="text-container">
-             { this.state.dataType === 'duties' ?
+             { this.state.dataType === 'duties' || this.state.dataType === 'techs' ?
                this.formattedDuties() :
                 <p>{this.state.cardData[this.state.currentData][this.state.dataType]}</p>
               }

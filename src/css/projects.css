@@ -40,13 +40,17 @@ p {
   width: 100%;
   text-align: center;
   padding: 0px 0px;
-  background-color: rgba(4, 72, 129, 0.51);
   transition: all 3s;
   border-color: black;
+  background-color: rgba(150, 117, 169, 0.65);
+}
+
+.data:hover {
+  background-color: rgba(4, 72, 129, 0.51);
 }
 
 .data:focus {
-  background-color: black;
+  background-color: rgba(12, 29, 62, 0.65);
 }
 
 .initial-project {

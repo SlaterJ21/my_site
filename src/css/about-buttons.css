@@ -1,11 +1,7 @@
 @keyframes buttonColor {
-  0% {background-color: rgba(148, 0, 211, .6)}
-  18% {background-color: rgba(75, 0, 130, .6)}
-  36% {background-color: rgba(	0, 0, 255, .6)}
-  52% {background-color: rgba(0, 255, 0, .6)}
-  70% {background-color: rgba(255, 255, 0, .6)}
-  88% {background-color: rgba(255, 127, 0, .6)}
-  100% {background-color: rgba(255, 0 , 0, .6)}
+  0% {background-color: rgba(150, 117, 169, 0.65)}
+  50% {background-color: rgba(4, 72, 129, 0.51)}
+  100% {background-color: rgba(12, 29, 62, 0.65)}
 }
 
 
@@ -15,7 +11,7 @@
   width: 350px;
   margin-top: 20px;
   margin-bottom: 30px;
-  animation: buttonColor 100s linear alternate infinite;
+  animation: buttonColor 20s linear alternate infinite;
 }
 
 .aboutButton {

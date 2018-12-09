@@ -10,8 +10,8 @@ const cardData = [
     title: "Niwot BarberShop",
     href: "https://niwot-barber.herokuapp.com",
     imgSrc: require("../01img/app_shots/barber.png"),
-    about: "After speaking with Alivia Bell, Owner/Operator of The Niwot Barbershop, I found that she could benefit from an up-to-date website for her shop. I knew that the expense of a website wasn't viable for the business. With a little free time and the desire to find a project I decided to build the website for Aliva as a gift.",
-    duties: ['Express Sever Dev', 'PostgreSQL DB dev', 'UI/UX QA'],
+    about: "I built this website as a gift for local business owner Alivia Bell. With a little time on my hands I wanted to pursue a project that I could complete in a short amount of time that would benefit my community. I wanted the site to be easy to navigate and easy to understand. I choose a minimalist style and stuck to getting the important information across. A few features i’d like to highlight are the responsive design, Floating Navigation Button, Moving Barbershop Pole, Day of the Week Tracker and Embedded Map. I feel for the time I allotted, that the project was above and beyond expectations.",
+    duties: ['App Development', 'Graphic-Design', 'UI/UX Quality Assurance', 'Copywriting', 'Deployment'],
     techs: ['React', 'React-materialize', 'PostgreSQL', 'Express.js', 'Node.js', 'HTML/CSS']
   },
   {
@@ -26,7 +26,7 @@ const cardData = [
     title: "Mobile Food Finder",
     href: "#",
     imgSrc: require("../01img/app_shots/mff2.png"),
-    about: 'Transactional tool to keep track of orders. Owners can create new trucks, menu items and toggle status. Eaters can browse online trucks and place orders.',
+    about: 'Mobile Food Finder was initially built as a way for Food Truck owners to give customers  daily updates on their location and menu. After meeting our groups MVP ahead of the deadline, we developed the app further to support customers placing orders to the trucks. What I enjoyed most was owning the project and exploring the possibilities of what it could be.',
     duties: ['Express Sever Dev', 'PostgreSQL DB dev', 'UI/UX QA'],
     techs: ['React-Native', 'Redux', 'Heroku', 'Auth0', 'bcrypt', 'React-materialize', 'PostgreSQL', 'Express.js', 'Node.js', 'HTML/CSS']
   }
@@ -48,7 +48,7 @@ class Projects extends Component {
   formattedDuties() {
     return (
       <ul>
-        {this.state.cardData ? this.state.cardData[this.state.currentData][this.state.dataType].map(duty => <li>{duty}</li>) : null}
+        {this.state.cardData ? this.state.cardData[this.state.currentData][this.state.dataType].map(duty => <li className="center-align">{duty}</li>) : null}
       </ul>
     )
   }

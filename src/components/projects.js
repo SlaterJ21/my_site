@@ -11,7 +11,7 @@ const cardData = [
     href: "https://niwot-barber.herokuapp.com",
     imgSrc: require("../01img/app_shots/barber.png"),
     about: "After speaking with Alivia Bell, Owner/Operator of The Niwot Barbershop, I found that she could benefit from an up-to-date website for her shop. I knew that the expense of a website wasn't viable for the business. With a little free time and the desire to find a project I decided to build the website for Aliva as a gift.",
-    res: ['Express Sever Dev', 'PostgreSQL DB dev', 'UI/UX QA'],
+    duties: ['Express Sever Dev', 'PostgreSQL DB dev', 'UI/UX QA'],
     features: 'Responsive Design, Floating Navigation Button, Moving Barbershop Pole, Day of the Week Tracker, Embedded Map'
   },
   {
@@ -19,7 +19,7 @@ const cardData = [
     href: "#",
     imgSrc: require("../01img/app_shots/cleverent.png"),
     about: 'The idea behind CleveRent was to facilitate Tenant to Property management communications.',
-    res: ['Express Sever Dev', 'PostgreSQL DB dev', 'UI/UX QA'],
+    duties: ['Express Sever Dev', 'PostgreSQL DB dev', 'UI/UX QA'],
     features: 'Auth0, bcrypt, JWT, Programmatically popullated cards with images based on user input'
   },
   {
@@ -43,6 +43,14 @@ class Projects extends Component {
       dataType: 'about',
       timer: 8
     }
+  }
+
+  formattedDuties() {
+    return (
+      <ul>
+        {this.state.cardData ? this.state.cardData[this.state.currentData].duties.map(duty => <li>{duty}</li>) : null}
+      </ul>
+    )
   }
 
   changeDataType(type) {
@@ -152,7 +160,10 @@ class Projects extends Component {
               </div>
             </Row>
             <Col l={12} className="text-container">
-              <p>{this.state.cardData[this.state.currentData][this.state.dataType]}</p>
+             { this.state.dataType === 'duties' ?
+               this.formattedDuties() :
+                <p>{this.state.cardData[this.state.currentData][this.state.dataType]}</p>
+              }
             </Col>
           </div>
         </Col>

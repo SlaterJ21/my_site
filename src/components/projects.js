@@ -110,9 +110,9 @@ class Projects extends Component {
           </Col>
         </Row>
 
-        <Col l={4} m={3} s={0}></Col>
+        <Col l={4} m={3} s={1}></Col>
 
-        <Col l={4} m={6} s={12}>
+        <Col l={4} m={6} s={10}>
             <div className="img-container">
               <div className="button-left" onClick={() => this.prevDataSet()}>
                 <div className="chev-left">

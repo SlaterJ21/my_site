@@ -25,7 +25,7 @@ class App extends Component {
       case 'about':
         return <AboutMe/>
 
-      default: return <Projects/>
+      default: return <Landing/>
     }
   }
   render() {

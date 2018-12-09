@@ -114,13 +114,13 @@ class Projects extends Component {
 
         <Col l={4} m={6} s={10}>
             <div className="img-container">
-              <div className="button-left" onClick={() => this.prevDataSet()}>
+              <div className="proj-button-left" onClick={() => this.prevDataSet()}>
                 <div className="chev-left">
                   <Icon small>chevron_left</Icon>
                 </div>
               </div>
               <img className="card-image" src={this.state.cardData[this.state.currentData].imgSrc} width="100%" alt="Niwot Barber"/>
-              <div className="button-right" onClick={() => this.nextDataSet()}>
+              <div className="proj-button-right" onClick={() => this.nextDataSet()}>
                 <div className="chev-right">
                   <Icon small>chevron_right</Icon>
                 </div>
@@ -131,7 +131,7 @@ class Projects extends Component {
               {this.state.cardData[this.state.currentData].title}
             </div>
             <Row>
-              <div className="fixed-buttons">
+              <div className="fixed-proj-buttons">
                 <Col l={6} m={6} s={6} className="center-align">
                   <Button className="data" href="#" onClick={() => this.changeDataType('about')}>About</Button>
                 </Col>
@@ -166,10 +166,3 @@ export default connect(
   mapStateToProps,
   mapDispatchToProps
 )(Projects);
-
-// <Col l={1} m={1} s={1}>
-//   <div className="nextProj button-left" onClick={() => this.nextDataSet()}><Icon small>chevron_right</Icon></div>
-// </Col>
-// <Col l={1} m={1} s={1}>
-//   <div className="nextProj button-right" onClick={() => this.prevDataSet()}><Icon small>chevron_left</Icon></div>
-// </Col>

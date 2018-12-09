@@ -11,13 +11,15 @@ const cardData = [
     href: "https://niwot-barber.herokuapp.com",
     imgSrc: require("../01img/app_shots/barber.png"),
     about: "After speaking with Alivia Bell, Owner/Operator of The Niwot Barbershop, I found that she could benefit from an up-to-date website for her shop. I knew that the expense of a website wasn't viable for the business. With a little free time and the desire to find a project I decided to build the website for Aliva as a gift.",
+    res: ['Express Sever Dev', 'PostgreSQL DB dev', 'UI/UX QA'],
     features: 'Responsive Design, Floating Navigation Button, Moving Barbershop Pole, Day of the Week Tracker, Embedded Map'
   },
   {
     title: "CleveRent",
-    href: "https://cleverent.herokuapp.com",
+    href: "#",
     imgSrc: require("../01img/app_shots/cleverent.png"),
     about: 'The idea behind CleveRent was to facilitate Tenant to Property management communications.',
+    res: ['Express Sever Dev', 'PostgreSQL DB dev', 'UI/UX QA'],
     features: 'Auth0, bcrypt, JWT, Programmatically popullated cards with images based on user input'
   },
   {
@@ -25,6 +27,7 @@ const cardData = [
     href: "#",
     imgSrc: require("../01img/app_shots/mff2.png"),
     about: 'Transactional tool to keep track of orders. Owners can create new trucks, menu items and toggle status. Eaters can browse online trucks and place orders.',
+    duties: ['Express Sever Dev', 'PostgreSQL DB dev', 'UI/UX QA'],
     features: 'Auth0, bcrypt, JWT, Programmatically popullated cards with images based on user input'
   }
 ]
@@ -128,17 +131,24 @@ class Projects extends Component {
             </div>
           <div className="card-footer" width="100%">
             <div className="center-align pro-title">
-              {this.state.cardData[this.state.currentData].title}
+              <a href={this.state.cardData[this.state.currentData].href}>
+                {this.state.cardData[this.state.currentData].title}
+              </a>
             </div>
             <Row>
               <div className="fixed-proj-buttons">
-                <Col l={6} m={6} s={6} className="center-align">
+                <Col l={4} m={4} s={4} className="center-align">
                   <Button className="data" href="#" onClick={() => this.changeDataType('about')}>About</Button>
                 </Col>
 
-                <Col l={6} m={6} s={6} className="center-align">
+                <Col l={4} m={4} s={4} className="center-align">
+                  <Button className="data" href="#" onClick={() => this.changeDataType('duties')}>Duties</Button>
+                </Col>
+
+                <Col l={4} m={4} s={4} className="center-align">
                   <Button className="data" href="#" onClick={() => this.changeDataType('features')}>Features</Button>
                 </Col>
+
               </div>
             </Row>
             <Col l={12} className="text-container">

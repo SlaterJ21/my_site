@@ -82,7 +82,7 @@ class Landing extends Component {
             <div
               className="container"
               style={ {
-                 height: this.state.animate ? 400 : 300,
+                 height: this.state.animate ? 350 : 300,
                  opacity: this.state.fadeOut ? 0 : 1
                } }
             >

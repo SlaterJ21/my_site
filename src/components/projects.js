@@ -95,29 +95,38 @@ class Projects extends Component {
   render() {
     const { changeView } = this.props
     return (
-      <Row onClick={() => this.resetTimer()}>
+      <Row>
+
         <Row>
-        <Col l={3}></Col>
-        <Col l={12} m={12} s={12}>
-          <div className="initial-project"
-            onClick={() => changeView('home')}
-            style={ {
-               height: 80
-             } }
-          >
+          <Col l={3}></Col>
+          <Col l={12} m={12} s={12}>
+            <div className="initial-project"
+              onClick={() => changeView('home')}
+              style={ {
+                 height: 80
+               } }>
             <div className="initial1project">JS</div>
-          </div>
-        </Col>
+            </div>
+          </Col>
         </Row>
-        <Col l={3} m={2} s={1}></Col>
-        <Col l={1} m={1} s={1}>
-          <div className="nextProj button-right" onClick={() => this.prevDataSet()}><Icon small>chevron_left</Icon></div>
-        </Col>
-        <Col l={4} m={6} s={8}>
-          <a rel="noopener noreferrer" target="_blank" href={this.state.cardData[this.state.currentData].href}>
-            <img className="card-image" src={this.state.cardData[this.state.currentData].imgSrc} width="100%" alt="Niwot Barber"/>
-          </a>
-          <div className="card-footer">
+
+        <Col l={4} m={3} s={0}></Col>
+
+        <Col l={4} m={6} s={12}>
+            <div className="img-container">
+              <div className="button-left" onClick={() => this.prevDataSet()}>
+                <div className="chev-left">
+                  <Icon small>chevron_left</Icon>
+                </div>
+              </div>
+              <img className="card-image" src={this.state.cardData[this.state.currentData].imgSrc} width="100%" alt="Niwot Barber"/>
+              <div className="button-right" onClick={() => this.nextDataSet()}>
+                <div className="chev-right">
+                  <Icon small>chevron_right</Icon>
+                </div>
+              </div>
+            </div>
+          <div className="card-footer" width="100%">
             <div className="center-align pro-title">
               {this.state.cardData[this.state.currentData].title}
             </div>
@@ -137,9 +146,7 @@ class Projects extends Component {
             </Col>
           </div>
         </Col>
-        <Col l={1} m={1} s={1}>
-          <div className="nextProj button-left" onClick={() => this.nextDataSet()}><Icon small>chevron_right</Icon></div>
-        </Col>
+
       </Row>
     );
   }
@@ -159,3 +166,10 @@ export default connect(
   mapStateToProps,
   mapDispatchToProps
 )(Projects);
+
+// <Col l={1} m={1} s={1}>
+//   <div className="nextProj button-left" onClick={() => this.nextDataSet()}><Icon small>chevron_right</Icon></div>
+// </Col>
+// <Col l={1} m={1} s={1}>
+//   <div className="nextProj button-right" onClick={() => this.prevDataSet()}><Icon small>chevron_left</Icon></div>
+// </Col>

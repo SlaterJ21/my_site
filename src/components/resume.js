@@ -65,7 +65,8 @@ class Resume extends Component {
                 <h5 className="center-align tech" onClick={() => this.showHide('tech')}> Technical Summary </h5>
               </Row>
               <Row className="center-align res">
-                <Col l={4} m={4} s={6}>
+                <Col l={2} m={2} s={0}></Col>
+                <Col l={3} m={3} s={6} className="left-align">
                   <ul>
                     <li><a rel="noopener noreferrer" target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript">JavaScript</a></li>
                     <li><a rel="noopener noreferrer" target="_blank" href="https://nodejs.org/en/about/">Node.js</a></li>
@@ -73,7 +74,7 @@ class Resume extends Component {
                     <li><a rel="noopener noreferrer" target="_blank" href="https://medium.freecodecamp.org/test-driven-development-what-it-is-and-what-it-is-not-41fa6bca02a2">TDD</a></li>
                   </ul>
                 </Col>
-                <Col l={4} m={4} s={6}>
+                <Col l={3} m={3} s={6} className="left-align">
                   <ul>
                     <li><a rel="noopener noreferrer" target="_blank" href="https://www.w3schools.com/html/html_css.asp">HTML/CSS</a></li>
                     <li><a rel="noopener noreferrer" target="_blank" href="http://www.reactnative.com/">React-Native</a></li>
@@ -81,7 +82,7 @@ class Resume extends Component {
                     <li><a rel="noopener noreferrer" target="_blank" href="https://www.postgresql.org/">PostgreSQL</a></li>
                   </ul>
                 </Col>
-                <Col l={4} m={4} className="hide-on-small-only">
+                <Col l={3} m={3} className="hide-on-small-only left-align">
                   <ul>
                     <li><a rel="noopener noreferrer" target="_blank" href="https://greensock.com/">GreenSock</a></li>
                     <li><a rel="noopener noreferrer" target="_blank" href="https://expressjs.com/">Express.js</a></li>
@@ -139,14 +140,19 @@ class Resume extends Component {
                 <h5 className="center-align"> Experience </h5>
               </Row>
               <Row className="left-align res experience">
-                <Col l={10} m={10} s={10}>
-                <h6><b>Application Developer</b> / <em>EightTen - Denver, CO</em></h6>
-                <p>Their vision for this particular project was to build a cultural assessment tool that allows companies to fill out a self-reporting survey. The tool serves as a platform for employers to be connected with professionals who can offer consultation and help create a roadmap for improvement.</p>
-                <p><em>React Native with Redux, JavaScript</em></p>
+                <Col l={12} m={12} s={12}>
+                  <h6><b>Application Developer</b> / <em>EightTen - Denver, CO</em></h6>
+                  <p>Their vision for this particular project was to build a cultural assessment tool that allows companies to fill out a self-reporting survey. The tool serves as a platform for employers to be connected with professionals who can offer consultation and help create a roadmap for improvement.</p>
+                  <p><em>React Native with Redux, JavaScript</em></p>
+                </Col>
+                <Col l={12} m={12} s={12}>
+                  <h6><b>Lead Technician</b> / <em>Mr.Sandless - Denver, CO</em></h6>
+                  <p>Mr. Sandless was my employer from 01/12 - 12/17. In 2016 I moved to Colorado to help a new franchise owner stand up his business. My responsibilities included job estimation - completion and training.</p>
+                  <p><em>Customer Relations, Project Management, Training, Wood-Working</em></p>
                 </Col>
               </Row>
             </Col>
-            <Col l={2} m={1} s={1}></Col>
+            <Col l={1} m={1} s={1}></Col>
           </Col>
         </Row>
 

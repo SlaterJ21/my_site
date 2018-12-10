@@ -28,13 +28,9 @@ p {
   border-radius: 10px 10px 0px 0px;
 }
 
-.initials {
-  margin-top: 17px;
-}
-
 h5 {
   margin-top: 25px;
-  margin-bottom: 30px;
+  margin-bottom: 25px;
 }
 
 .tech {
@@ -47,6 +43,7 @@ h5 {
 
 .experience{
   margin-bottom: 100px;
+  padding: 0 10px;
 }
 
 a {

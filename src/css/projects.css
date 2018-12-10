@@ -133,12 +133,12 @@ p {
 }
 
 .chev-left {
-  margin-top: 100%;
+  margin-top: 18vh;
   margin-left: 5px;
 }
 
 .chev-right {
-  margin-top: 100%;
+  margin-top: 18vh;
   padding-right: 0px;
   padding-left: 63%;
 }

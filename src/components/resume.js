@@ -65,8 +65,8 @@ class Resume extends Component {
                 <h5 className="center-align tech" onClick={() => this.showHide('tech')}> Technical Summary </h5>
               </Row>
               <Row className="center-align res">
-                <Col l={2} m={2} s={0}></Col>
-                <Col l={3} m={3} s={6} className="left-align">
+                <Col l={2} m={2} s={2}></Col>
+                <Col l={3} m={3} s={3} className="left-align">
                   <ul>
                     <li><a rel="noopener noreferrer" target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript">JavaScript</a></li>
                     <li><a rel="noopener noreferrer" target="_blank" href="https://nodejs.org/en/about/">Node.js</a></li>
@@ -74,7 +74,8 @@ class Resume extends Component {
                     <li><a rel="noopener noreferrer" target="_blank" href="https://medium.freecodecamp.org/test-driven-development-what-it-is-and-what-it-is-not-41fa6bca02a2">TDD</a></li>
                   </ul>
                 </Col>
-                <Col l={3} m={3} s={6} className="left-align">
+                <Col s={1} className="hide-on-med-and-up"></Col>
+                <Col l={3} m={3} s={3} className="left-align">
                   <ul>
                     <li><a rel="noopener noreferrer" target="_blank" href="https://www.w3schools.com/html/html_css.asp">HTML/CSS</a></li>
                     <li><a rel="noopener noreferrer" target="_blank" href="http://www.reactnative.com/">React-Native</a></li>

@@ -48,7 +48,7 @@ class Projects extends Component {
   formattedDuties() {
     return (
       <ul>
-        {this.state.cardData ? this.state.cardData[this.state.currentData][this.state.dataType].map(duty => <li className="center-align">{duty}</li>) : null}
+        {this.state.cardData ? this.state.cardData[this.state.currentData][this.state.dataType].map(duty => <li className="center-align list">{duty}</li>) : null}
       </ul>
     )
   }
@@ -162,7 +162,7 @@ class Projects extends Component {
             <Col l={12} className="text-container">
              { this.state.dataType === 'duties' || this.state.dataType === 'techs' ?
                this.formattedDuties() :
-                <p>{this.state.cardData[this.state.currentData][this.state.dataType]}</p>
+                <div className={"about-wrapper"}><p>{this.state.cardData[this.state.currentData][this.state.dataType]}</p></div>
               }
             </Col>
           </div>

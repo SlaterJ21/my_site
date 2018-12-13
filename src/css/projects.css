@@ -26,13 +26,12 @@ ul {
   border-radius: 5px;
 }
 
-
 .nextProj {
   margin-top: 30vh;
 }
 
 p {
-  font-size: calc(7px + .5vw);
+  font-size: calc(12px + .2vw);
 }
 
 .data {
@@ -141,4 +140,9 @@ p {
   margin-top: 18vh;
   padding-right: 0px;
   padding-left: 63%;
+}
+
+.about-wrapper {
+  margin: auto auto;
+  width: calc(200px + 10vw);
 }

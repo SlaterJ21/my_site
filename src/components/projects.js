@@ -9,7 +9,7 @@ const cardData = [
   {
     title: "Niwot BarberShop",
     href: "https://niwot-barber.herokuapp.com",
-    imgSrc: require("../01img/app_shots/barber.png"),
+    imgSrc: require("../01img/app_shots/proj_shots/proj_002.png"),
     about: "I built this website as a gift for local business owner Alivia Bell. With a little time on my hands I wanted to pursue a project that I could complete in a short amount of time that would benefit my community. I wanted the site to be easy to navigate and easy to understand. I choose a minimalist style and stuck to getting the important information across. A few features i’d like to highlight are the responsive design, Floating Navigation Button, Moving Barbershop Pole, Day of the Week Tracker and Embedded Map. I feel for the time I allotted, that the project was above and beyond expectations.",
     duties: ['App Development', 'Graphic-Design', 'UI/UX Quality Assurance', 'Copywriting', 'Deployment'],
     techs: ['React', 'React-materialize', 'PostgreSQL', 'Express.js', 'Node.js', 'HTML/CSS']
@@ -17,7 +17,7 @@ const cardData = [
   {
     title: "CleveRent",
     href: "#",
-    imgSrc: require("../01img/app_shots/cleverent.png"),
+    imgSrc: require("../01img/app_shots/proj_shots/proj_001.png"),
     about: 'CleveRent was developed as a tool to expedite communication between Tenants and Property managers. The app was designed to support users ranging from homeowners renting single rooms to the managers of multi-unit properties. One of the highlighted features of the app are the live updates based on user input. I worked on this project with two partners Johnny Castillo and John Stephens-Webb. The three of us were a balanced team that took pride in planning and adapted well to      challenges. At the time we were all novice developers, but our teamwork and cohesion as a unit allowed us to deliver the mvp before the deadline.',
     duties: ['Express Sever Development', 'PostgreSQL DB Development', 'UI/UX Quality Assurance'],
     techs: ['Auth0', 'bcrypt', 'JWT', 'React', 'React-materialize', 'PostgreSQL', 'Express.js', 'Node.js', 'HTML/CSS']
@@ -25,7 +25,7 @@ const cardData = [
   {
     title: "Mobile Food Finder",
     href: "#",
-    imgSrc: require("../01img/app_shots/mff2.png"),
+    imgSrc: require("../01img/app_shots/proj_shots/proj_003.png"),
     about: 'Mobile Food Finder was initially built as a way for Food Truck owners to give customers  daily updates on their location and menu. After meeting our groups MVP ahead of the deadline, we developed the app further to support customers placing orders to the trucks. What I enjoyed most was owning the project and exploring the possibilities of what it could be.',
     duties: ['Express Sever Dev', 'PostgreSQL DB dev', 'UI/UX QA'],
     techs: ['React-Native', 'Redux', 'Heroku', 'Auth0', 'bcrypt', 'React-materialize', 'PostgreSQL', 'Express.js', 'Node.js', 'HTML/CSS']

@@ -3,7 +3,7 @@ import { Row, Col, Button } from 'react-materialize';
 import '../css/landing.css'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
-import { changeView } from '../actions'
+import { changeView, getVideos } from '../actions'
 
 class Landing extends Component {
 
@@ -25,7 +25,6 @@ class Landing extends Component {
   }
 
   revealListChar(){
-
     if (this.state.listNum === this.state.list.length - 1 && this.state.listChar === this.state.list[this.state.listNum].length + 40) {
       this.setState({
         listChar: 0,
@@ -61,6 +60,7 @@ class Landing extends Component {
   }
 
   componentDidMount() {
+    this.props.getVideos()
     setTimeout(() => {
       this.setState({ animate: true })
       setTimeout(() => this.setState({initialAni: true}), 300)
@@ -174,7 +174,8 @@ class Landing extends Component {
 }
 
 const mapDispatchToProps = dispatch => bindActionCreators({
-  changeView
+  changeView,
+  getVideos
 }, dispatch)
 
 const mapStateToProps = state => {

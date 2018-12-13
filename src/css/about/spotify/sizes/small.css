@@ -1,0 +1,19 @@
+.spotifyContainer-s {
+ height: 100%;
+ margin-top: 0px;
+ margin-bottom: -160px;
+ border-radius: 10px;
+}
+
+.nextAlbum-s {
+  margin-top: 75px;
+}
+
+.center-fix {
+  margin-bottom: -34px;
+}
+
+.nextAlbum-s {
+  margin-top: 0px;
+  margin-bottom: -50px
+}

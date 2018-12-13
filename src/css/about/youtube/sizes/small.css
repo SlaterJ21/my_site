@@ -1,0 +1,9 @@
+.youtubeContainer-s {
+ height: 355px!important;
+ width: 100%;
+ overflow: scroll;
+ border-radius: 10px;
+ margin-top: 20px;
+ margin-left: auto!important;
+ margin-right: auto;
+}

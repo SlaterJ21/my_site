@@ -1,0 +1,10 @@
+.spotifyContainer-m {
+ height: 400px;
+ margin-top: -75px;
+ margin-bottom: -40px;
+ border-radius: 10px;
+}
+
+.nextAlbum-m {
+  margin-top: 75px;
+}

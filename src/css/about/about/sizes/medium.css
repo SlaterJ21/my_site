@@ -1,0 +1,13 @@
+.aboutContainer-m {
+ height: 500px;
+ margin-top: -55px;
+ margin-bottom: -160px;
+ overflow: scroll;
+ border-radius: 10px;
+}
+
+.aboutMe-m {
+  width: 80vw;
+  background-color: rgba(4, 72, 129, 0.51);
+  padding: 5px;
+}

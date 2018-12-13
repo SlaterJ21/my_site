@@ -1,3 +1,28 @@
+.buttons-container-m {
+  height: 150px;
+  margin-top: -10px;
+  margin-bottom: 40px;
+}
+
+.initial-m {
+  width: 40px;
+  height: 40px;
+  font-size: 20px;
+  text-align: center;
+  border: 1px solid white;
+  color: white;
+  border-radius: 5px;
+  font-weight: bolder;
+  margin-top: 10px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.initial-m:hover {
+  animation: initialHover .5s forwards;
+  transition: font-size 1s, opacity 1s;
+}
+
 @keyframes buttonColor {
   0% {background-color: rgba(150, 117, 169, 0.65)}
   50% {background-color: rgba(4, 72, 129, 0.51)}
@@ -5,12 +30,21 @@
 }
 
 
+.aboutButtons-m {
+  border-radius: 5px;
+  height: 60px;
+  width: 600px;
+  animation: buttonColor 20s linear alternate infinite;
+  margin-bottom: 0px;
+}
+
+
+
 .aboutButtons {
   border-radius: 5px;
   height: 60px;
   width: 350px;
-  margin-top: 20px;
-  margin-bottom: 30px;
+  margin: 20px auto 30px auto;
   animation: buttonColor 20s linear alternate infinite;
 }
 

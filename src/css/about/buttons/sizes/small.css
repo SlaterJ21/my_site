@@ -1,0 +1,54 @@
+.buttons-container-s {
+  height: 100px;
+  margin-top: -80px;
+  margin-bottom: 0px;
+  width: 80vw;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.initial-s {
+  width: 30px;
+  height: 30px;
+  font-size: 15px;
+  text-align: center;
+  border: 1px solid white;
+  color: white;
+  border-radius: 5px;
+  font-weight: bolder;
+  margin-top: 15px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.initial-s:hover {
+  animation: initialHover .5s forwards;
+  transition: font-size 1s, opacity 1s;
+}
+
+@keyframes buttonColor {
+  0% {background-color: rgba(150, 117, 169, 0.65)}
+  50% {background-color: rgba(4, 72, 129, 0.51)}
+  100% {background-color: rgba(12, 29, 62, 0.65)}
+}
+
+
+.aboutButtons-s {
+  border-radius: 5px;
+  height: 60px;
+  width: 300px;
+  animation: buttonColor 20s linear alternate infinite;
+  margin-bottom: 0px;
+}
+
+.aboutButton-s {
+  margin-top: 16px;
+}
+
+.youtubeButton-s {
+  margin-top: 10px;
+}
+
+.spotifyButton-s {
+  margin-top: 16px;
+}

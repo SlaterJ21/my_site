@@ -1,0 +1,5 @@
+@keyframes buttonColor {
+  0% {background-color: rgba(150, 117, 169, 0.65)}
+  50% {background-color: rgba(4, 72, 129, 0.51)}
+  100% {background-color: rgba(12, 29, 62, 0.65)}
+}

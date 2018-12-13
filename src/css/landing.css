@@ -41,13 +41,13 @@
 
 .name {
   margin: auto auto;
-  font-size: calc(18px + 2vmin);
+  font-size: calc(25px + .2vmin);
   font-weight: bold;
 }
 
 .title {
   margin: 10px auto;
-  font-size: calc(6px + 2vmin);
+  font-size: calc(18px + .2vmin);
   transition: all 2s;
 }
 
